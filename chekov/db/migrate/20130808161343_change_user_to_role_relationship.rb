@@ -1,6 +1,6 @@
 class ChangeUserToRoleRelationship < ActiveRecord::Migration
-  def change
-  	add_column :users, :role_id, :integer
-  	add_index  :users, :role_id
+  create_table :roles_users do |t|
+  	t.belongs_to :user 
+  	t.belongs_to :role
   end
 end
