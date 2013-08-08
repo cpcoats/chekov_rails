@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
    # all users except for the "nobody"/"unassigned" user at id: 1
   scope :reals, -> { where 'id > 1' }
 
+  has_many :roles
   has_many :assignments, :class_name => "Task", :foreign_key => :assignee_id
   has_many :reported, :class_name => "Task", :foreign_key => :reporter_id
   has_many :comments, :class_name => "Comment", :foreign_key => :commenter_id

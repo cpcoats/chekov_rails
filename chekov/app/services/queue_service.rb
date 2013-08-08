@@ -25,7 +25,7 @@ module QueueService
 
   # eventually, optional use of new object's attributes in `data`
   def emit(msg, data = {})
-    $redis.set(msg, data)
+    # $redis.set(msg, data)
   end
 
   # iterate over parts for action and object of action
